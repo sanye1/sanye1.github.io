@@ -103,24 +103,25 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="定义垃圾回收机制(GC:Garbage Collection),执行环境负责管理代码执行过程中使用的内存。 原理垃圾收集器会定期（周期性）找出那些不在继续使用的变量，然后释放其内存。但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行 实例123456789function fn1() &amp;#123;var obj = &amp;#123;name: &amp;apos;hanz">
+<meta name="keywords" content="计算机原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wwwxxx.com/2019/02/14/hello-world/index.html">
+<meta property="og:title" content="垃圾回收机制，与内存管理">
+<meta property="og:url" content="http://wwwxxx.com/2019/02/15/垃圾回收机制，与内存管理/index.html">
 <meta property="og:site_name" content="sanye">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="定义垃圾回收机制(GC:Garbage Collection),执行环境负责管理代码执行过程中使用的内存。 原理垃圾收集器会定期（周期性）找出那些不在继续使用的变量，然后释放其内存。但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行 实例123456789function fn1() &amp;#123;var obj = &amp;#123;name: &amp;apos;hanz">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-14T15:17:16.430Z">
+<meta property="og:updated_time" content="2019-02-15T11:24:30.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="垃圾回收机制，与内存管理">
+<meta name="twitter:description" content="定义垃圾回收机制(GC:Garbage Collection),执行环境负责管理代码执行过程中使用的内存。 原理垃圾收集器会定期（周期性）找出那些不在继续使用的变量，然后释放其内存。但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行 实例123456789function fn1() &amp;#123;var obj = &amp;#123;name: &amp;apos;hanz">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wwwxxx.com/2019/02/14/hello-world/">
+  <link rel="canonical" href="http://wwwxxx.com/2019/02/15/垃圾回收机制，与内存管理/">
 
 
 
@@ -130,7 +131,7 @@
   };
 </script>
 
-  <title>Hello World | sanye</title>
+  <title>垃圾回收机制，与内存管理 | sanye</title>
   
 
 
@@ -346,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wwwxxx.com/2019/02/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://wwwxxx.com/2019/02/15/垃圾回收机制，与内存管理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="写代码的白居易">
@@ -363,7 +364,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">垃圾回收机制，与内存管理
 
               
             
@@ -389,12 +390,34 @@
                 
               
 
-              <time title="创建时间：2019-02-14 23:17:16" itemprop="dateCreated datePublished" datetime="2019-02-14T23:17:16+08:00">2019-02-14</time>
+              <time title="创建时间：2019-02-15 14:06:38 / 修改时间：19:24:30" itemprop="dateCreated datePublished" datetime="2019-02-15T14:06:38+08:00">2019-02-15</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -431,15 +454,32 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><pre><code>垃圾回收机制(GC:Garbage Collection),执行环境负责管理代码执行过程中使用的内存。
+</code></pre><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><pre><code>垃圾收集器会定期（周期性）找出那些不在继续使用的变量，然后释放其内存。但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行
+</code></pre><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function fn1() &#123;</span><br><span class="line">var obj = &#123;name: &apos;hanzichi&apos;, age: 10&#125;;</span><br><span class="line">&#125;</span><br><span class="line">function fn2() &#123;</span><br><span class="line">var obj = &#123;name:&apos;hanzichi&apos;, age: 10&#125;;</span><br><span class="line">return obj;</span><br><span class="line">&#125;</span><br><span class="line">var a = fn1();</span><br><span class="line">var b = fn2();</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p><strong>fn1中定义的obj为局部变量，而当调用结束后，出了fn1的环境，那么该块内存会被js引擎中的垃圾回收器自动释放；在fn2被调用的过程中，返回的对象被全局变量b所指向，所以该块内存并不会被释放。</strong></p>
+</blockquote>
+<h2 id="垃圾回收策略：标记清除-较为常用-和引用计数"><a href="#垃圾回收策略：标记清除-较为常用-和引用计数" class="headerlink" title="垃圾回收策略：标记清除(较为常用)和引用计数"></a>垃圾回收策略：标记清除(较为常用)和引用计数</h2><h3 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h3><p><strong>定义和用法</strong>:当变量进入环境时，将变量标记”进入环境”，当变量离开环境时，标记为：”离开环境”。某一个时刻，垃圾回收器会过滤掉环境中的变量，以及被环境变量引用的变量，剩下的就是被视为准备回收的变量。</p>
+<h3 id="引用记数"><a href="#引用记数" class="headerlink" title="引用记数"></a>引用记数</h3><p><strong>定义和用法</strong>：引用计数是跟踪记录每个值被引用的次<br><strong>基本原理</strong>：就是变量的引用次数，被引用一次则加1，当这个引用计数为0时，被视为准备回收的对象</p>
+<hr>
+<h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><blockquote>
+<p>内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。C#和Java等语言采用了自动垃圾回收方法管理内存，几乎不会发生内存泄露。我们知道，浏览器中也是采用自动垃圾回收方法管理内存，但由于浏览器垃圾回收方法有bug，会产生内存泄露</p>
+</blockquote>
+<h3 id="内存泄漏的几种情况"><a href="#内存泄漏的几种情况" class="headerlink" title="内存泄漏的几种情况"></a>内存泄漏的几种情况</h3><blockquote>
+<p>1.当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在IE中不会作出恰当处理，此时要先手动移除事件，不然会存在内存泄露。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;myDiv&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; value=&quot;Click me&quot; id=&quot;myBtn&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var btn = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">    btn.onclick = function()&#123;</span><br><span class="line">    document.getElementById(&quot;myDiv&quot;).innerHTML = &quot;Processing...&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong>解决方法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;myDiv&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; value=&quot;Click me&quot; id=&quot;myBtn&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var btn = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">    btn.onclick = function()&#123;</span><br><span class="line">    btn.onclick = null;</span><br><span class="line">    document.getElementById(&quot;myDiv&quot;).innerHTML = &quot;Processing...&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>2.由于是函数内定义函数，并且内部函数–事件回调的引用外暴了，形成了闭包。闭包可以维持函数内局部变量，使其得不到释放。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">unction bindEvent()&#123;</span><br><span class="line">    var obj=document.createElement(&quot;XXX&quot;);</span><br><span class="line">    obj.onclick=function()&#123;</span><br><span class="line">        //Even if it&apos;s a empty function</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong>解决方法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function bindEvent()&#123;</span><br><span class="line">    var obj=document.createElement(&quot;XXX&quot;);</span><br><span class="line">    obj.onclick=function()&#123;</span><br><span class="line">         //Even if it&apos;s a empty function</span><br><span class="line">    &#125;</span><br><span class="line">    obj=null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>　   </p>
 
       
     </div>
@@ -490,6 +530,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/计算机原理/" rel="tag"># 计算机原理</a>
+          
+        </div>
+      
 
       
       
@@ -499,14 +545,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/15/闭包的理解/" rel="next" title="闭包的理解">
+                <i class="fa fa-chevron-left"></i> 闭包的理解
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/15/新的篇章/" rel="prev" title="新的篇章">
-                新的篇章 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/15/js面向对象中实现继承的方法/" rel="prev" title="js面向对象中实现继承的方法">
+                js面向对象中实现继承的方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -695,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收策略：标记清除-较为常用-和引用计数"><span class="nav-number">3.</span> <span class="nav-text">垃圾回收策略：标记清除(较为常用)和引用计数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标记清除"><span class="nav-number">3.1.</span> <span class="nav-text">标记清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用记数"><span class="nav-number">3.2.</span> <span class="nav-text">引用记数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存泄漏"><span class="nav-number">4.</span> <span class="nav-text">内存泄漏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义："><span class="nav-number">4.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存泄漏的几种情况"><span class="nav-number">4.2.</span> <span class="nav-text">内存泄漏的几种情况</span></a></li></ol></li></ol></div>
             
 
           </div>

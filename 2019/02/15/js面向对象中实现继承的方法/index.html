@@ -103,24 +103,25 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="面向对象的基本特征封闭，继承，多态 实现继承的方法 1.原型链继承1234567891011121314151617function teacher(name)&amp;#123;    this.name = name;&amp;#125;teacher.prototype.sayName = function()&amp;#123;    console.log(&amp;quot;name is &amp;quot;+this.n">
+<meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wwwxxx.com/2019/02/14/hello-world/index.html">
+<meta property="og:title" content="js面向对象中实现继承的方法">
+<meta property="og:url" content="http://wwwxxx.com/2019/02/15/js面向对象中实现继承的方法/index.html">
 <meta property="og:site_name" content="sanye">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="面向对象的基本特征封闭，继承，多态 实现继承的方法 1.原型链继承1234567891011121314151617function teacher(name)&amp;#123;    this.name = name;&amp;#125;teacher.prototype.sayName = function()&amp;#123;    console.log(&amp;quot;name is &amp;quot;+this.n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-14T15:17:16.430Z">
+<meta property="og:updated_time" content="2019-02-15T11:23:18.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="js面向对象中实现继承的方法">
+<meta name="twitter:description" content="面向对象的基本特征封闭，继承，多态 实现继承的方法 1.原型链继承1234567891011121314151617function teacher(name)&amp;#123;    this.name = name;&amp;#125;teacher.prototype.sayName = function()&amp;#123;    console.log(&amp;quot;name is &amp;quot;+this.n">
 
 
 
 
 
 
-  <link rel="canonical" href="http://wwwxxx.com/2019/02/14/hello-world/">
+  <link rel="canonical" href="http://wwwxxx.com/2019/02/15/js面向对象中实现继承的方法/">
 
 
 
@@ -130,7 +131,7 @@
   };
 </script>
 
-  <title>Hello World | sanye</title>
+  <title>js面向对象中实现继承的方法 | sanye</title>
   
 
 
@@ -346,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wwwxxx.com/2019/02/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://wwwxxx.com/2019/02/15/js面向对象中实现继承的方法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="写代码的白居易">
@@ -363,7 +364,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">js面向对象中实现继承的方法
 
               
             
@@ -389,12 +390,34 @@
                 
               
 
-              <time title="创建时间：2019-02-14 23:17:16" itemprop="dateCreated datePublished" datetime="2019-02-14T23:17:16+08:00">2019-02-14</time>
+              <time title="创建时间：2019-02-15 17:20:48 / 修改时间：19:23:18" itemprop="dateCreated datePublished" datetime="2019-02-15T17:20:48+08:00">2019-02-15</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -431,15 +454,19 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="面向对象的基本特征"><a href="#面向对象的基本特征" class="headerlink" title="面向对象的基本特征"></a>面向对象的基本特征</h2><p><strong>封闭，继承，多态</strong></p>
+<h2 id="实现继承的方法"><a href="#实现继承的方法" class="headerlink" title="实现继承的方法"></a>实现继承的方法</h2><blockquote>
+<p><strong>1.原型链继承</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function teacher(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">teacher.prototype.sayName = function()&#123;</span><br><span class="line">    console.log(&quot;name is &quot;+this.name);</span><br><span class="line">&#125;</span><br><span class="line">var teacher1 = new teacher(&quot;xiaoming&quot;);</span><br><span class="line">teacher1.sayName();</span><br><span class="line"> </span><br><span class="line">function student(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">student.prototype = new teacher()</span><br><span class="line">var student1 = new student(&quot;xiaolan&quot;);</span><br><span class="line">student1.sayName();</span><br><span class="line">//  name is xiaoming</span><br><span class="line">//  name is xiaolan</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong>2.call(),apply()方法继承</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">unction teacher(name,age)&#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.age = age;</span><br><span class="line">this.sayhi = function()&#123;</span><br><span class="line">alert(&apos;name:&apos;+name+&quot;, age:&quot;+age);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">function student()&#123;</span><br><span class="line">var args = arguments;</span><br><span class="line">teacher.call(this,args[0],args[1]);</span><br><span class="line">// teacher.apply(this,arguments);</span><br><span class="line">&#125;</span><br><span class="line">var teacher1 = new teacher(&apos;xiaoming&apos;,23);</span><br><span class="line">teacher1.sayhi();</span><br><span class="line"></span><br><span class="line">var student1 = new student(&apos;xiaolan&apos;,12);</span><br><span class="line">student1.sayhi();</span><br><span class="line"></span><br><span class="line">// alert: name:xiaoming, age:23</span><br><span class="line">// alert: name:xiaolan, age:12</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong>3.混合方法继承</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function teacher(name,age)&#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">teacher.prototype.sayName = function()&#123;</span><br><span class="line">console.log(&apos;name:&apos;+this.name);</span><br><span class="line">&#125;</span><br><span class="line">teacher.prototype.sayAge = function()&#123;</span><br><span class="line">console.log(&apos;age:&apos;+this.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function student()&#123;</span><br><span class="line">var args = arguments;</span><br><span class="line">teacher.call(this,args[0],args[1]);</span><br><span class="line">&#125;</span><br><span class="line">student.prototype = new teacher();</span><br><span class="line"></span><br><span class="line">var student1 = new student(&apos;xiaolin&apos;,23);</span><br><span class="line">student1.sayName();</span><br><span class="line">student1.sayAge();</span><br><span class="line">// name:xiaolin</span><br><span class="line">// age:23</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong>4.对象冒充</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.age = age;</span><br><span class="line">this.show = function()&#123;</span><br><span class="line">console.log(this.name+&quot;, &quot;+this.age);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Student(name,age)&#123;</span><br><span class="line">this.student = Person; //将Person类的构造函数赋值给this.student</span><br><span class="line">this.student(name,age); //js中实际上是通过对象冒充来实现继承的</span><br><span class="line">delete this.student; //移除对Person的引用</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var s = new Student(&quot;小明&quot;,17);</span><br><span class="line">s.show();</span><br><span class="line"></span><br><span class="line">var p = new Person(&quot;小花&quot;,18);</span><br><span class="line">p.show();</span><br><span class="line">// 小明, 17</span><br><span class="line">// 小花, 18</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
@@ -490,6 +517,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/面向对象/" rel="tag"># 面向对象</a>
+          
+        </div>
+      
 
       
       
@@ -499,14 +532,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/15/垃圾回收机制，与内存管理/" rel="next" title="垃圾回收机制，与内存管理">
+                <i class="fa fa-chevron-left"></i> 垃圾回收机制，与内存管理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/15/新的篇章/" rel="prev" title="新的篇章">
-                新的篇章 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/15/js数组方法/" rel="prev" title="js数组方法和属性">
+                js数组方法和属性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -695,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的基本特征"><span class="nav-number">1.</span> <span class="nav-text">面向对象的基本特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现继承的方法"><span class="nav-number">2.</span> <span class="nav-text">实现继承的方法</span></a></li></ol></div>
             
 
           </div>
